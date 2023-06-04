@@ -74,7 +74,7 @@ Each state machine for an `enum Feeling` adds the following methods:
 
 ## To do
 
-_(In no particular order)_
+_In no particular order_:
 
 - More examples for the various ways to define and use `enum_state_machine`
 - Document possible compile errors
@@ -90,7 +90,7 @@ This project is intended to be a safe, welcoming space for collaboration, and co
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+This shard is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Contributors
 

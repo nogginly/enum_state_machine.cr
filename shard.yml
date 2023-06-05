@@ -8,6 +8,12 @@ description: |
   A type-safe finite state machine for Crystal where the states are defined using enum's.
 
 development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+    version: ~> 1.0.0
+  spectator:
+    gitlab: arctic-fox/spectator
+    version: ~> 0.11.0
 
 dependencies:
 

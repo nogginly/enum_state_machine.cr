@@ -159,7 +159,7 @@ module EnumStateMachine
 
     # The current value of the `{{state_enum}}` state.
     def {{state_enum.id.underscore}} : {{state_enum}}
-      {{field}}.state
+      @{{field}}.state
     end
 
     # Internal delegating macro

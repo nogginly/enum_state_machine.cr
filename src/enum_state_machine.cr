@@ -84,12 +84,12 @@ module EnumStateMachine
         end
       %}
 
-      macro guard_{{name.id}}
+      macro guard_{{name.id}}(*, on_fail)
         {% if guard.is_a?(ProcLiteral) %}
           {%
             raise "Event's guard handler (proc) cannot expect arguments." if guard.args.size > 0
           %}
-          return nil unless (@{{field}}.allowed? do
+          return \{{on_fail}} unless (@{{field}}.allowed? do
             {{guard.body}}
           end)
         {% end %}
@@ -97,7 +97,7 @@ module EnumStateMachine
 
       # Check if `{{state_enum}}` state can transition to `#{{to}}`
       def {{ "may_#{name.id}?".id }} : Bool
-        guard_{{name.id}}
+        guard_{{name.id}}(on_fail: false)
         {% if from %}
         @{{field}}.is?({{from}})
         {% elsif except_from %}
@@ -109,7 +109,7 @@ module EnumStateMachine
 
       # Transition `{{state_enum}}` state to `#{{to}}` if possible; return nil if unable.
       def {{ name.id }} : {{state_enum}}?
-        guard_{{name.id}}
+        guard_{{name.id}}(on_fail: nil)
         {% if from %}
         @{{field}}.transitions(from: {{from}}, to: {{to}})
         {% elsif except_from %}

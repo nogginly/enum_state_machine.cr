@@ -18,9 +18,9 @@ module OneStateSpec
   end
 end
 
-include OneStateSpec
+Spectator.describe OneStateSpec::OneStateMachine do
+  include OneStateSpec
 
-Spectator.describe OneStateMachine do
   state_machine_core Activity, initial: Activity::Sleeping
 
   describe "#sleep" do

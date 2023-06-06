@@ -26,9 +26,9 @@ module TwoStateSpec
   end
 end
 
-include TwoStateSpec
+Spectator.describe TwoStateSpec::TwoStateMachine do
+  include TwoStateSpec
 
-Spectator.describe TwoStateMachine do
   state_machine_core Action, initial: Action::Ready
 
   state_machine_core Motion, initial: Motion::Idling

@@ -29,6 +29,10 @@ end
 include TwoStateSpec
 
 Spectator.describe TwoStateMachine do
+  state_machine_core Action, initial: Action::Ready
+
+  state_machine_core Motion, initial: Motion::Idling
+
   describe "#idle" do
     it "succeeds if already idling" do
       expect(subject.may_idle?).to be true

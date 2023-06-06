@@ -21,6 +21,8 @@ end
 include OneStateSpec
 
 Spectator.describe OneStateMachine do
+  state_machine_core Activity, initial: Activity::Sleeping
+
   describe "#sleep" do
     it "fails if already sleeping" do
       expect(subject.may_sleep?).to be false

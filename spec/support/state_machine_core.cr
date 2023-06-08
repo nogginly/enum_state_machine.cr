@@ -7,7 +7,7 @@ macro state_machine_core(state_enum, *, initial)
       raise "State machine requires an Enum; `{{state_enum}}` isn't one."
     end
     state_consts = state_type.constants
-    state_ids = state_consts.map { |e| e.id.underscore }
+    state_ids = state_consts.map(&.id.underscore)
     state_name = state_enum.id.underscore
   %}
 

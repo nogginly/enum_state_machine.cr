@@ -24,5 +24,7 @@ jobs:
           crystal: ${{ matrix.crystal }}
       - name: Install shards
         run: shards update --ignore-crystal-version
+      - name: Run static code analysis
+        run: bin/ameba
       - name: Run tests
         run: crystal spec --order=random

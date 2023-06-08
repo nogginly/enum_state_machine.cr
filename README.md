@@ -2,6 +2,8 @@
 
 `enum_state_machine` is a type-safe finite state machine for Crystal where the states are defined using enum's. I created it because I wanted the minimal FSM data type that was function and easy to use.
 
+[![.github/workflows/ci.yml](https://github.com/nogginly/enum_state_machine.cr/actions/workflows/ci.yml/badge.svg)](https://github.com/nogginly/enum_state_machine.cr/actions/workflows/ci.yml)
+
 ## Installation
 
 1. Add the dependency to your `shard.yml`:
@@ -80,7 +82,7 @@ _In no particular order_:
 - Document possible compile errors
 - Event transition failure handler (like `guard`)
 - Multiple transitions for a single event
-- Test suite
+- ~~Test suite~~
 
 ## Contributing
 

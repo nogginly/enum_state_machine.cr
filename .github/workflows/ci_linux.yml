@@ -1,0 +1,29 @@
+# This CI job installs Crystal and shard dependencies, then executes `crystal spec` to run the test suite
+# More configuration options are available at https://crystal-lang.github.io/install-crystal/configurator.html
+
+name: Linux CI
+on:
+  push:
+  pull_request:
+    branches: [main]
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        crystal: [1.7, latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Download source
+        uses: actions/checkout@v3
+      - name: Install Crystal
+        uses: crystal-lang/install-crystal@v1
+        with:
+          crystal: ${{ matrix.crystal }}
+      - name: Install shards
+        run: shards update --ignore-crystal-version
+      - name: Run static code analysis
+        run: bin/ameba
+      - name: Run tests
+        run: crystal spec --order=random

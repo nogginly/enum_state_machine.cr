@@ -2,9 +2,7 @@
 
 `enum_state_machine` is a type-safe finite state machine for Crystal where the states are defined using enum's. I created it because I wanted the minimal FSM data type that was function and easy to use.
 
-[![.github/workflows/ci_linux.yml](https://github.com/nogginly/enum_state_machine.cr/actions/workflows/ci_linux.yml/badge.svg)](https://github.com/nogginly/enum_state_machine.cr/actions/workflows/ci_linux.yml)
-
-[![.github/workflows/ci_macos.yml](https://github.com/nogginly/enum_state_machine.cr/actions/workflows/ci_macos.yml/badge.svg)](https://github.com/nogginly/enum_state_machine.cr/actions/workflows/ci_macos.yml)
+[![.github/workflows/ci_linux.yml](https://github.com/nogginly/enum_state_machine.cr/actions/workflows/ci_linux.yml/badge.svg)](https://github.com/nogginly/enum_state_machine.cr/actions/workflows/ci_linux.yml) [![.github/workflows/ci_macos.yml](https://github.com/nogginly/enum_state_machine.cr/actions/workflows/ci_macos.yml/badge.svg)](https://github.com/nogginly/enum_state_machine.cr/actions/workflows/ci_macos.yml)
 
 ## Installation
 

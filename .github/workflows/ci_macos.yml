@@ -18,12 +18,14 @@ jobs:
       - name: Download source
         uses: actions/checkout@v3
       - name: Install Crystal
+        id: install
         uses: crystal-lang/install-crystal@v1
         with:
           crystal: ${{ matrix.crystal }}
       - name: Install shards
         run: shards update --ignore-crystal-version
       - name: Run static code analysis
+        if: {{ !startsWith(steps.install.outputs.crystal, "1.9") }} # bug
         run: bin/ameba
       - name: Run tests
         run: crystal spec --order=random

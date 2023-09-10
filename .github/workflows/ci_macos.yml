@@ -25,7 +25,7 @@ jobs:
       - name: Install shards
         run: shards update --ignore-crystal-version
       - name: Run static code analysis
-        if: {{ !startsWith(steps.install.outputs.crystal, "1.9") }} # bug
+        if: ${{ !startsWith(steps.install.outputs.crystal, "1.9") }} # bug
         run: bin/ameba
       - name: Run tests
         run: crystal spec --order=random

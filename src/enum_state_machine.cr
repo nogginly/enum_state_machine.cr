@@ -79,7 +79,7 @@ module EnumStateMachine
     # :nodoc:
     macro event(state_enum, field, name, *, from = nil, except_from = nil, to, guard)
       {%
-        if (from && except_from)
+        if from && except_from
           raise "State machine event requires either `from` or `except` or neither, but not both."
         end
       %}
